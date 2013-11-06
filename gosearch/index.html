@@ -1,0 +1,58 @@
+<html class="noscroll">
+<body>
+	<div style="padding-left:40%">
+		<input id="word" class="st1" type="text" size="40" onkeypress="enter()">
+		<button style="font-weight:bold;background-color:#FFB266" onclick="gogogo()">Search</button>
+	</div>
+	<div scrolling="no">
+		<iframe id="dict" class="istyle" src="http://dict.cn/" scrolling="yes"></iframe>
+		<iframe id="google" class="istyle" src="http://www.google.com/custom?q=&btnG=Search" scrolling="yes"></iframe>
+	</div>
+</body>
+
+<script>
+function enter(e){
+    var event = e || window.event;
+    var charCode = event.which || event.keyCode;
+
+    if ( charCode == '13' ) {
+      // Enter pressed
+	  var item=document.getElementById('word').value;
+	  var item1="http://dict.cn/";
+	  var item2="http://us.wow.com/image?s_it=topsearchbox.image&s_chn=9&s_pt=aolsem&v_t=aolsem&imgsz=&imgtype=&imgc=&q=";
+	  item1=item1.concat(String(item));
+	  item2=item2.concat(String(item));
+	  //item2=item2.concat("&tbm=isch");
+	  document.getElementById('dict').src=item1;
+	  document.getElementById('google').src=item2;
+      return false;
+    }
+}
+
+function gogogo(){
+	  var item=document.getElementById('word').value;
+	  var item1="http://dict.cn/";
+	  var item2="http://us.wow.com/image?s_it=topsearchbox.image&s_chn=9&s_pt=aolsem&v_t=aolsem&imgsz=&imgtype=&imgc=&q=";
+	  item1=item1.concat(String(item));
+	  item2=item2.concat(String(item));
+	  //item2=item2.concat("&tbm=isch");
+	  document.getElementById('dict').src=item1;
+	  document.getElementById('google').src=item2;
+}
+</script>
+
+<style>
+html.noscroll{
+overflow:hidden;
+}
+iframe.istyle{
+width: 49.6%;
+height: 93%;
+display: inline-block;
+}
+#st1{
+height: 5%;
+}
+</style>
+
+</html>
